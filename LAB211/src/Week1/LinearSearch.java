@@ -12,51 +12,78 @@ import java.util.Scanner;
  *
  * @author Admin
  */
-public class LinearSearch {    
-    private int[] array;
+public class LinearSearch {
+
+    private int length;
+    private int search;
+
+    public int getLength() {
+        return length;
+    }
+
+    public void setLength(int length) {
+        this.length = length;
+    }
+
+    public int getSearch() {
+        return search;
+    }
+
+    public void setSearch(int search) {
+        this.search = search;
+    }
+
     
-    public LinearSearch(int capacity)
+    public LinearSearch(int length, int search) {
+        this.length = length;
+        this.search = search;
+    }
+    public LinearSearch(){}   
+     
+    public void getInput()
     {
-        
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Enter number of array:");
+        this.length = scanner.nextInt();
+        scanner.nextLine();
+
+        System.out.println("Enter search value:");
+        this.search = scanner.nextInt();
     }
     
-
-    public static void main(String[] args) {
-
-// TODO code application logic here
-        System.out.println("Please input number of array");
-        int capacity = Integer.parseInt(sc.nextLine());
-        int[] array = generateArray(capacity);
-        System.out.println("enter value want to search");
-        int result = Integer.parseInt(sc.nextLine());
-        System.out.println("The array: [");
-        for(int i=0; i<capacity;i++)
-        {
-            System.out.print(array[i] + ",");
-        }
-        
-
-    }
-    public static void addValue()
+    public int[] createArray(int length)
     {
-      Random random = new Random();
-      array[capacity]=random.nextInt(capacity);
-    }
-
-    public static int[] generateArray(int n) {
-        int[] array = new int[n];
-        for (int i = 0; i < n; i++) {
-            array[i] = random.nextInt(n);
+        int[] array = new int[length];
+        for (int i = 0; i < length; i++) {
+            array[i] = new Random().nextInt(length);
         }
         return array;
     }
-    public int[] position(int n,int[] array)
-    {
-        int[] result = new int[n];
-        for(int)
+    public void displayArray(int[] arr,int key) {
+        System.out.print("The array: ");
+        System.out.print("[");
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i]);
+            if (i < arr.length - 1) {
+                System.out.print(", ");
+            }
+        }
+        System.out.print("]");
+        System.out.println("------------------------------------");
+        int size = arr.length;
+        for (int i = 0; i < size; i++) {
+            if (arr[i] == key) {
+                System.out.println("\nFound " + search + " at index: " + i);
+            }
+            else
+            {
+                System.out.println("Can't find the value " + key + " in the list");
+            }
+        }
+        
     }
-    
-        
-        
 
+    
+    
 }
