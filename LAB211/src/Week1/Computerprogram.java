@@ -1,12 +1,27 @@
-package Week1.ComputerProgram;
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package Week1;
 
 import java.util.Scanner;
 
-public class Manager {
- private static final Scanner in = new Scanner(System.in);
+/**
+ *
+ * @author Admin
+ */
+public class Computerprogram 
+{
+
+    public Computerprogram() 
+    {
+        
+    }
+    
+     private static final Scanner in = new Scanner(System.in);
 
     //display menu
-    public static int mennu() {
+    public static int menu() {
         System.out.println("1. Normal Calculator");
         System.out.println("2. BMI Calculator");
         System.out.println("3. Exit");
@@ -122,7 +137,9 @@ public class Manager {
             return "Very fat - should lose weight immediately";
         }
     }
-        public static void BMICalculator() {
+
+    //allow user BMI calculator
+    public static void BMICalculator() {
         System.out.print("Enter Weight(kg): ");
         double weight = checkInputDouble();
         System.out.print("Enter Height(cm): ");
@@ -131,5 +148,8 @@ public class Manager {
         System.out.printf("BMI number: %.2f\n", bmi);
         System.out.println("BMI Status: " + BMIStatus(bmi));
     }
-    }
+        
+}
+    
+    
 

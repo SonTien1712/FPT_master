@@ -6,6 +6,7 @@ package Week1;
 
 import Week1.BaseNumberChangingSystem.Manager;
 
+
 /**
  *
  * @author Admin
@@ -39,6 +40,22 @@ public class Test
             }
         }
         //Changing Base Number
+        
+        //Computer Program
+//        Computerprogram Manager = new Computerprogram();
+//          while (true) {
+//            int choice = Manager.menu();
+//            switch (choice) {
+//                case 1:
+//                    Manager.normalCalculator();
+//                    break;
+//                case 2:
+//                    Manager.BMICalculator();
+//                    break;
+//                case 3:
+//                    return;
+//            }
+//        }
         
     }
 }
