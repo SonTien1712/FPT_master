@@ -4,7 +4,7 @@
  */
 package Week1;
 
-import Week1.BaseNumberChangingSystem.Manager;
+
 
 
 /**
@@ -42,7 +42,7 @@ public class Test
         //Changing Base Number
         
         //Computer Program
-//        Computerprogram Manager = new Computerprogram();
+ //       Computerprogram Manager = new Computerprogram();
 //          while (true) {
 //            int choice = Manager.menu();
 //            switch (choice) {
