@@ -16,6 +16,11 @@ public class BubbleSortAlgorithm
         
         int n = Utilizer.checkNumber();
         Array arr = new Array(n);
+        arr.addValue();
+        arr.Display();
+        System.out.println(" after sort ");
+        arr.sortValue();
+        arr.Display();
         
        
         

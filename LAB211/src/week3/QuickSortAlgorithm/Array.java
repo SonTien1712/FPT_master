@@ -34,19 +34,51 @@ public class Array {
            System.out.println( "the value of the " + (i+1) +"element in array is :" + this.array[i]);
        }
     }
-    public void sortValue()
+//    public void sortValue()
+//    {
+//        int count =0;
+//        boolean check=false;
+//        
+//        
+//        for(int i=0;i<this.array.length;i++)
+//        {
+//            for(int j=this.array.length-1;j>=0;j--)
+//            {
+//                
+//            }
+//        }
+//        }
+    public int partition(int left,int right, int input[])
     {
-        int count =0;
-        boolean check=false;
+        int pivot = array[(left+right)/2];
         
         
-        for(int i=0;i<this.array.length;i++)
+        
+        while(left<=right)
         {
-            for(int j=this.array.length-1;j>=0;j--)
+            while(array[left]<pivot )left++;
+            while(array[right]>pivot)right--;
+            if(left<=right)
             {
-                
+                swap(array[left],array[right]);
+                left++;right--; 
             }
         }
-        }
+        return right;
+    }
+    public void     quickSort(int a[],int l,int r)
+    {
+        int i = partition(l, r, a);
+        if(i<r  ) quickSort(a, i, r);
+        if(l<i-1) quickSort(a, l, i-1);
+    }
+    void swap(int a,int b)
+            
+    {
+        int temp = a;
+        a=b;
+        b=temp;
+        
+    }
     }
 

@@ -2,8 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package week3.BubbleSortAlgorithm;
+package week3.BinarySearch;
 
+import week3.BubbleSortAlgorithm.*;
 import java.util.Scanner;
 
 /**
@@ -20,8 +21,6 @@ public class Utilizer {
         try {
             System.out.println("enter number :");
             int input = Integer.parseInt(scanner.nextLine());
-//            if(input<2 ) continue;
-            if(input<2) throw new IllegalArgumentException("error");
             return input;
 
         } catch (Exception e) {

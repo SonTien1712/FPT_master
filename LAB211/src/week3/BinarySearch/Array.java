@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package week3.BubbleSortAlgorithm;
+package week3.BinarySearch;
 
 import java.util.Random;
 
@@ -18,7 +18,10 @@ public class Array
     {
         this.array = new int[n];
     }
-    
+//    public Array()
+//    {
+//        this(10);
+//    }
     public void addValue()
     {
        Random random = new Random();
@@ -27,16 +30,16 @@ public class Array
            this.array[i] = random.nextInt(this.array.length);
        }
     }
-    public void Display()
+     public void Display()
     {
         for(int i=0;i<this.array.length;i++)
        {
            System.out.println( "the value of the " + (i+1) +"element in array is :" + this.array[i]);
        }
     }
-    public void sortValue()
-    {
-        int count = 0;
+     public void bubbleSortArray()
+     {
+         int count = 0;
         boolean check=false;
         for(int i=0;i<this.array.length-1&&!check;i++)            
         {
@@ -53,7 +56,17 @@ public class Array
                 }
             }
         }
-    }
-    
-    
+        
+         
+     }
+     public int binarySearch(int a[],int value,int l,int r)
+     {
+         int mid=a[(0+a.length-1)/2];
+         
+         int index=(a.length-1)/2;
+         
+         if(mid==value) return (a.length-1)/2;
+         
+         if(mid<value) binarySearch(a, value,);
+     }
 }
