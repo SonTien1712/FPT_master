@@ -34,7 +34,7 @@ public class Array
            System.out.println( "the value of the " + (i+1) +"element in array is :" + this.array[i]);
        }
     }
-    public void sortValue()
+    public void bubbleSortValue()
     {
         int count = 0;
         boolean check=false;

@@ -55,6 +55,7 @@ public class ArrayStack
     }
     void push(int x)
     {
+
         if(isFull()) increaseCap();
         arrayNode[top++]= new Node(x);
     }

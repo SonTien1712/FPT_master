@@ -48,12 +48,9 @@ public class Array {
 //            }
 //        }
 //        }
-    public int partition(int left,int right, int input[])
+    public int partition(int left,int right)
     {
         int pivot = array[(left+right)/2];
-        
-        
-        
         while(left<=right)
         {
             while(array[left]<pivot )left++;
@@ -66,11 +63,11 @@ public class Array {
         }
         return right;
     }
-    public void     quickSort(int a[],int l,int r)
+    public void     quickSort(int l,int r)
     {
-        int i = partition(l, r, a);
-        if(i<r  ) quickSort(a, i, r);
-        if(l<i-1) quickSort(a, l, i-1);
+        int i = partition(l, r);
+        if(i<r  ) quickSort( i, r);
+        if(l<i-1) quickSort( l, i-1);
     }
     void swap(int a,int b)
             

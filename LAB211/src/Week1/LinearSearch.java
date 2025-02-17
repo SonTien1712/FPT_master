@@ -43,11 +43,9 @@ public class LinearSearch {
     public void getInput()
     {
         Scanner scanner = new Scanner(System.in);
-
         System.out.println("Enter number of array:");
         this.length = scanner.nextInt();
         scanner.nextLine();
-
         System.out.println("Enter search value:");
         this.search = scanner.nextInt();
     }

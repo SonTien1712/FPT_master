@@ -19,7 +19,7 @@ public class BubbleSortAlgorithm
         arr.addValue();
         arr.Display();
         System.out.println(" after sort ");
-        arr.sortValue();
+        arr.bubbleSortValue();
         arr.Display();
         
        

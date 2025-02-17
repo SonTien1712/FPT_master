@@ -61,12 +61,11 @@ public class Array
      }
      public int binarySearch(int a[],int value,int l,int r)
      {
-         int mid=a[(0+a.length-1)/2];
-         
-         int index=(a.length-1)/2;
-         
-         if(mid==value) return (a.length-1)/2;
-         
-         if(mid<value) binarySearch(a, value,);
+         int index=l+(r-l)/2;
+         int mid = a[index];
+         while(mid!=value){
+         if(mid<value) binarySearch(a, value,index,r);
+         if(mid>value) binarySearch(a, value, l, index);
+         }return index;
      }
 }

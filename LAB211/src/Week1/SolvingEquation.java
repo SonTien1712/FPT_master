@@ -12,7 +12,6 @@ import java.util.Scanner;
  */
 public class SolvingEquation {
     
-    
 
     //dispaly menu
     public static int menu() {
