@@ -120,7 +120,7 @@ public class SinglyLinkedList {
     Write a function to remove a node have a specific data
     
      */
-    void removeData(int data) {
+    public void removeData(int data) {
         if (isEmpty()) {
             System.out.print("Empty");
 

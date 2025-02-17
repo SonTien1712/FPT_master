@@ -8,6 +8,7 @@ package Slot5;
  *
  * @author Admin
  */
-public class Stack {
+public class Stack 
+{
     
 }

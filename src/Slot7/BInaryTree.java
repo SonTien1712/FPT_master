@@ -125,7 +125,8 @@ public class BInaryTree {
     }
 
     public static void main(String[] args) {
-        BInaryTree bt = new BInaryTree(7);
+        BInaryTree bt = new BInaryTree(8);
+        bt.insert(10);
         bt.insert(3);
         bt.insert(5);
         bt.insert(7);
