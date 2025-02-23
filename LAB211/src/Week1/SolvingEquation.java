@@ -10,11 +10,8 @@ import java.util.Scanner;
  *
  * @author Admin
  */
-public class SolvingEquation {
-    
-
-    //dispaly menu
-    public static int menu() {
+public class SolvingEquation {   
+        public static int menu() {
         System.out.println("1. Calculate Superlative Equation");
         System.out.println("2. Calculate Quadratic Equation");
         System.out.println("3. Exit");
@@ -23,7 +20,7 @@ public class SolvingEquation {
         return choice;
     }
 
-    //check user input number limit
+    
     public static int checkInputIntLimit(int min, int max) {
         Scanner in = new Scanner(System.in);
         //loop until user input correct
@@ -42,7 +39,7 @@ public class SolvingEquation {
         }
     }
 
-    //check user input double
+    
     public static double checkInputDouble() {
         Scanner in = new Scanner(System.in);
         //loop until user input correct
@@ -67,7 +64,7 @@ public class SolvingEquation {
         }
     }
 
-    //check number is even or not
+    
     public static boolean checkEven(double n) {
         if (n % 2 == 0) {
             return true;
@@ -76,7 +73,7 @@ public class SolvingEquation {
         }
     }
 
-    //check number is squarenumber or not
+    
     public static boolean checkSquareNumber(double n) {
         if ((int) Math.sqrt(n) * (int) Math.sqrt(n) == n) {
             return true;
@@ -85,7 +82,7 @@ public class SolvingEquation {
         }
     }
 
-    //allow user calculate Superlative Equation
+    
     public static void superlativeEquation() {
         System.out.print("Enter A: ");
         double a = checkInputDouble();

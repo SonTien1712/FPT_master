@@ -17,12 +17,20 @@ public class Person {
     Year yearofBirth;
     String major;
 
-    public Person(int ID, String fullname, int phonenumber, Year yearofBirth, String major) {
+    public void InputAll(int ID, String fullname, int phonenumber, Year yearofBirth, String major) {
+        this.ID = ID;
+        this.fullname = fullname;
+        this.phonenumber = phonenumber;
+        this.yearofBirth = yearofBirth;
+        this.major = major;
+    }
+    public Person()
+    {
         this.ID = 0;
         this.fullname = "";
         this.phonenumber = 0;
         this.yearofBirth = null;
-        this.major = "";
+        this.major = ""; 
     }
 
     @Override

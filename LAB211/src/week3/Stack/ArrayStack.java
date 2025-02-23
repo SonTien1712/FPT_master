@@ -55,15 +55,14 @@ public class ArrayStack
     }
     void push(int x)
     {
-
+        if(isEmpty()) arrayNode[top]=new Node(x);
         if(isFull()) increaseCap();
         arrayNode[top++]= new Node(x);
     }
-    void pop()
+    Node pop()
     {
-//        Node pNode = arrayNode[top--];
-//        return pNode;
-        System.out.println(arrayNode[top--]);
+        if(isEmpty()) System.out.println("Empty");
+        return arrayNode[top--];
     }
     Node get(int position)
     {

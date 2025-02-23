@@ -4,13 +4,9 @@
  */
 package Week4.StudentManager.Model;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Scanner;
+import Week5.CourseManagement.Controller.DataInput;
+
+import java.util.*;
 
 /**
  *
@@ -19,14 +15,12 @@ import java.util.Scanner;
 public class StudentList 
 {
     private static ArrayList<Student> sList = new ArrayList<>();
-
     public static ArrayList<Student> getsList() {
         return sList;
-    }
-    
+    }    
     public boolean checkStudent(Student s)
     {
-//        while(Student stu)
+
         for(Student student : StudentList.getsList())
         {
             if(student.equals(s)) return false;
@@ -40,19 +34,17 @@ public class StudentList
     sList.add(s);
         }return false;
     }
-    public List<Student> find(String name)
+    public Student find(int id)
     {
-        List<Student> s = new ArrayList<>();
+
         for(Student st: sList)
         {
-            if(st.getStudentName().toLowerCase().contains(name))
+            if(st.getStudentName().toLowerCase().equals(id))
             {
-                s.add(st);
+                return st;
             }
         }
-
-        return s;
-        
+        return null;
     }
     public void sortStudent()
     {
@@ -63,8 +55,7 @@ public class StudentList
                         return s1.getStudentName().compareTo(s2.getStudentName());
                     }
                 });
-    }
-   
+    }   
     public void showStudent()
     {
         for(Student s : StudentList.getsList())
@@ -72,8 +63,19 @@ public class StudentList
             System.err.println(s.toString());           
         }
     }
-    public void updateStudent(Student s)
+    public void updateStudent()
     {
+        Student update= find(DataInput.inputPositiveInt());
+        while(true)
+        {
+            //update id
+            System.out.println("ID");
+            int id=DataInput.inputPositiveInt();
+            if(id==0)
+            {
+
+            }
+        }
 
         
         

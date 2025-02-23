@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package Week4.ClassManager.View;
+package Week4.StudentManager.Controller;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -20,7 +20,6 @@ public class DataInput {
         System.out.print(prompt);
         return scanner.nextLine().trim();
     }
-
 //    public static int numCheck(long prompt,int check)
 //    {
 //        int count=0;
@@ -31,7 +30,6 @@ public class DataInput {
 //       if(count==check) return 0;
 //       return -1;
 //
-
     public static int countNumber(int prompt) {
         int result = 0;
         if (prompt == 0) return -1;

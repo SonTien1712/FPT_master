@@ -40,8 +40,9 @@ public class Array
         boolean check=false;
         for(int i=0;i<this.array.length-1&&!check;i++)            
         {
+            
             check=true;
-            for(int j=0; j<this.array.length-i-1;j++)
+            for(int j=0;j<this.array.length-i-1;j++)
             {
                 count++;
                 if(this.array[j]>this.array[j+1])

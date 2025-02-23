@@ -21,24 +21,24 @@ public class Test
         counter.analyze(content);
         counter.display();
         //LinearSearch
-        LinearSearch searcher = new LinearSearch();
-        searcher.getInput();        
-        searcher.displayArray(searcher.createArray(searcher.getLength()),searcher.getSearch());
-        //Solving the Equation
-        
-        while (true) {
-            int choice = SolvingEquation.menu();
-            switch (choice) {
-                case 1:
-                    SolvingEquation.superlativeEquation();
-                    break;
-                case 2:
-                    SolvingEquation.quadraticEquation();
-                    break;
-                case 3:
-                    return;
-            }
-        }
+//        LinearSearch searcher = new LinearSearch();
+//        searcher.getInput();        
+//        searcher.displayArray(searcher.createArray(searcher.getLength()),searcher.getSearch());
+//        //Solving the Equation
+//        
+//        while (true) {
+//            int choice = SolvingEquation.menu();
+//            switch (choice) {
+//                case 1:
+//                    SolvingEquation.superlativeEquation();
+//                    break;
+//                case 2:
+//                    SolvingEquation.quadraticEquation();
+//                    break;
+//                case 3:
+//                    return;
+//            }
+//        }
         //Changing Base Number
         
         //Computer Program

@@ -20,7 +20,7 @@ public class Computerprogram
     
      private static final Scanner in = new Scanner(System.in);
 
-    //display menu
+    
     public static int menu() {
         System.out.println("1. Normal Calculator");
         System.out.println("2. BMI Calculator");
@@ -30,9 +30,9 @@ public class Computerprogram
         return choice;
     }
 
-    //check user input number limit
+    
     public static int checkInputIntLimit(int min, int max) {
-        //loop until user input correct
+        
         while (true) {
             try {
                 int result = Integer.parseInt(in.nextLine().trim());
@@ -48,9 +48,9 @@ public class Computerprogram
         }
     }
 
-    //allow user input number double
+    
     public static double checkInputDouble() {
-        //loop until user input correct
+        
         while (true) {
             try {
                 double result = Double.parseDouble(in.nextLine());
@@ -62,9 +62,9 @@ public class Computerprogram
         }
     }
 
-    //allow user input operator
+    
     public static String checkInputOperator() {
-        //loop until user input correct
+        
         while (true) {
             String result = in.nextLine().trim();
             if (result.isEmpty()) {
@@ -80,14 +80,14 @@ public class Computerprogram
         }
     }
 
-    //allow user input number
+    
     public static double inputNumber() {
         System.out.print("Enter number: ");
         double number = checkInputDouble();
         return number;
     }
 
-    //allow user calculator normal
+    
     public static void normalCalculator() {
         double memory;
         System.out.print("Enter number: ");
@@ -123,7 +123,7 @@ public class Computerprogram
 
     }
 
-    //display result BMI status
+    
     public static String BMIStatus(double bmi) {
         if (bmi < 19) {
             return "Under-standard.";
@@ -138,7 +138,7 @@ public class Computerprogram
         }
     }
 
-    //allow user BMI calculator
+    
     public static void BMICalculator() {
         System.out.print("Enter Weight(kg): ");
         double weight = checkInputDouble();
