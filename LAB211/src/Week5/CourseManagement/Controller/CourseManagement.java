@@ -1,24 +1,25 @@
 package Week5.CourseManagement.Controller;
 
 import Week5.CourseManagement.Model.Course;
+import Week5.CourseManagement.Model.CourseLists;
 import Week5.CourseManagement.Model.OfflineCourse;
 import Week5.CourseManagement.Model.OnlineCourse;
 
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.Scanner;
 
-public class CourseList
+public class CourseManagement
 {
-    private static ArrayList<Course> courseArrayList = new ArrayList<>();
-
-    public static ArrayList<Course> getCourseArrayList() {
-        return courseArrayList;
-    }
-
-    public static void setCourseArrayList(ArrayList<Course> courseArrayList) {
-        CourseList.courseArrayList = courseArrayList;
-    }
+//    private static ArrayList<Course> courseArrayList = new ArrayList<>();
+//
+//    public static ArrayList<Course> getCourseArrayList() {
+//        return courseArrayList;
+//    }
+//
+//    public static void setCourseArrayList(ArrayList<Course> courseArrayList) {
+//        CourseList.courseArrayList = courseArrayList;
+//    }
+    CourseLists courseArrayList = new CourseLists();
 
     public static int getMenu() {
         Scanner scanner = new Scanner(System.in);
@@ -76,7 +77,7 @@ public class CourseList
                 System.out.println("Note : ");
                 String oNote = DataInput.inputString();
                 oCourse.InputAll(oId,oName,oCredits,oPlatform,oIst,oNote);
-                courseArrayList.add(oCourse);
+                courseArrayList.getCourseArrayLists().add(oCourse);
                 break;
             case 2:
                 OfflineCourse fCourse = new OfflineCourse();
@@ -113,7 +114,7 @@ public class CourseList
                 System.out.println("Campus : ");
                 String campus = DataInput.inputString();
                 fCourse.InputAll(fId, fName, fCredits, campus, begin,end );
-                courseArrayList.add(fCourse);
+                courseArrayList.getCourseArrayLists().add(fCourse);
 
         }
     }
@@ -122,7 +123,7 @@ public class CourseList
         String id=DataInput.inputString();
         boolean check=false;
         while(!check) {
-            for (Course c : courseArrayList) {
+            for (Course c : courseArrayList.getCourseArrayLists()) {
                 if (c.getCourseId().equals(id)) {
                     return c;
                 } else {
@@ -130,8 +131,9 @@ public class CourseList
                     if(DataInput.inputString().equals('y'))
                     {
                         check=true;
+                    }else {
+                        check=false;
                     }
-
                 }
             }
         }
@@ -140,16 +142,31 @@ public class CourseList
     //Added a check for empty input using response.isEmpty()
     public void updateCourse()
     {
-        Course temp = searchCourseById();
+        Course temp = new OfflineCourse();
+
 
     }
 //    public void updateCourse()
 //    {
 //        System.out.println("");
 //    }
+    public boolean deleteCourse(String idCourse)
+
+    {
+        for(Course course : courseArrayList.getCourseArrayLists())
+        {
+            if(course.getCourseId().equals(idCourse))
+            {
+                courseArrayList.getCourseArrayLists().remove(course);
+                return true;
+            }
+
+        }
+        return false;
+    }
     public boolean checkUniqueId(String Id)
     {
-        for(Course course : courseArrayList)
+        for(Course course : courseArrayList.getCourseArrayLists())
         {
             if(course.getCourseId().toLowerCase().trim().matches(Id))
             {
@@ -160,7 +177,7 @@ public class CourseList
     }
     public boolean checkUniqueName(String name)
     {
-        for(Course course : courseArrayList)
+        for(Course course : courseArrayList.getCourseArrayLists())
         {
             if(course.getCourseId().toLowerCase().trim().matches(name))
             {
