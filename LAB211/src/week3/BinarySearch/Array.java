@@ -14,7 +14,7 @@ public class Array
 {
     private int[] array;
     
-    public Array(int n)
+    public Array()
     {
         this.array = new int[n];
     }
