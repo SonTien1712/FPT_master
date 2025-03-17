@@ -48,10 +48,13 @@ public class Management
         }
         return false;
     }
+
     public void changeSalary(String status,ArrayList<History> lh)
     {
         
     }
+
+
 
 
 }

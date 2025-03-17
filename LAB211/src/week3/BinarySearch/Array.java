@@ -13,6 +13,8 @@ import java.util.Random;
 public class Array 
 {
     private int[] array;
+
+    private int n;
     
     public Array()
     {
