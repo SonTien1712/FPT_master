@@ -9,6 +9,10 @@ public class ShopManagement {
 
     private Shopping shopping = new Shopping();
 
+    public FruitList getFruitList() {
+        return fruitList;
+    }
+
     public void addFruit()
     {
         while(true){
@@ -25,13 +29,19 @@ public class ShopManagement {
             String origin = DataInput.InputString();
             Fruit fruit = new Fruit(id, name, price, quantity, origin);
             fruitList.addFruit(fruit);
-            System.out.println("Do you want to continue?");
-            System.out.println("Option(Y/N) :");
-            String option = DataInput.InputString();
-            if(option.equals("Y")){
-                continue;
-            }else{
-                break;
+            String option;
+            while (true) {
+                System.out.print("Do you want to continue? (Y/N): ");
+                option = DataInput.InputString().trim();
+
+                if (option.equalsIgnoreCase("Y")) {
+                    break;
+                } else if (option.equalsIgnoreCase("N")) {
+                    System.out.println("Exiting fruit entry...");
+                    return;
+                } else {
+                    System.out.println("Invalid input. Please enter Y or N.");
+                }
             }
         }
     }
@@ -62,18 +72,15 @@ public class ShopManagement {
             System.out.println("Your Choice");
             temp.toString();
             System.out.println("Total : " +temp.calTotal()+"$");
-            System.out.println("INput your name");
+            System.out.println("Input your name");
             String name = DataInput.InputString();
             shopping.addShopping(name,temp);
-
-
         }
-
     }
 
     public void viewOrder()
     {
-        System.out.println("Customer : " + shopping.getOrderList().keys());
+        System.out.println("Customer : " + shopping.getOrderList().keySet());
     }
 
 

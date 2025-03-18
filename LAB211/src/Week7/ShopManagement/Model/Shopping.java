@@ -1,43 +1,24 @@
 package Week7.ShopManagement.Model;
 
-import javax.swing.*;
-import java.util.ArrayList;
-import java.util.Hashtable;
-import java.util.Objects;
+import java.util.HashMap;
 
-public class Shopping
-{
-    private FruitList fruitList = new FruitList();
+public class Shopping {
+    private HashMap<String, FruitList> OrderList = new HashMap<>();
 
-    private Hashtable<String,FruitList> OrderList = new Hashtable<String, FruitList>();
-
-    public Shopping()
-    {
-        this.OrderList.put(null,null);
+    public Shopping() {
+        // Constructor remains empty
     }
 
-
-    public FruitList getFruitList() {
-        return fruitList;
+    public void addShopping(String customer, FruitList order) {
+        if (customer == null || order == null) {
+            throw new IllegalArgumentException("Customer and order cannot be null.");
+        }
+        this.OrderList.put(customer, order);
     }
 
-    public void addShopping(String customer, FruitList order)
-    {
-        this.OrderList.put(customer,order);
-    }
-
-    public Hashtable<String, FruitList> getOrderList() {
+    public HashMap<String, FruitList> getOrderList() {
         return OrderList;
     }
-
-
-
-
-
-//    public void addOrder(Fruit fruit)
-//    {
-//        fruitList.addFruit(fruit);
-//    }
 
     @Override
     public String toString() {
@@ -45,6 +26,5 @@ public class Shopping
                 "OrderList=" + OrderList +
                 '}';
     }
-
-    //    public void add
 }
+
