@@ -4,6 +4,8 @@ import Week7.ShopManagement.Model.Fruit;
 import Week7.ShopManagement.Model.FruitList;
 import Week7.ShopManagement.Model.Shopping;
 
+import java.util.List;
+
 public class ShopManagement {
     private FruitList fruitList = new FruitList();
 
@@ -46,37 +48,37 @@ public class ShopManagement {
         }
     }
 
-    public void addCustomerOrder()
-    {
-        System.out.println("Fruit List");
-        fruitList.toString();
-        while(true) {
-            FruitList temp = new FruitList();
-            String choice;
-            do{
-                System.out.println("Add Fruit you want to buy :");
-                String fruitName = DataInput.InputString();
-                for (Fruit fruits : fruitList.getOrder()) {
-                    if (fruits.getName().equals(fruitName)) {
-                        System.out.println("Please Input Quantity");
-                        fruits.setQuantity(DataInput.InputInteger());
-                        temp.addFruit(fruits);
-                    } else {
-                        System.out.println("Invalid Fruit");
-                        System.out.println("Enter again");
-                    }
-                }
-                System.out.println("Do you want to order now (Y/N) :");
-                 choice = DataInput.InputString();
-            }while(!choice.equals('Y'));
-            System.out.println("Your Choice");
-            temp.toString();
-            System.out.println("Total : " +temp.calTotal()+"$");
-            System.out.println("Input your name");
-            String name = DataInput.InputString();
-            shopping.addShopping(name,temp);
-        }
-    }
+//    public void addCustomerOrder()
+//    {
+//        System.out.println("Fruit List");
+//        fruitList.toString();
+//        while(true) {
+//            FruitList temp = new FruitList();
+//            String choice;
+//            do{
+//                System.out.println("Add Fruit you want to buy :");
+//                String fruitName = DataInput.InputString();
+//                for (Fruit fruits : fruitList.getOrder()) {
+//                    if (fruits.getName().equals(fruitName)) {
+//                        System.out.println("Please Input Quantity");
+//                        fruits.setQuantity(DataInput.InputInteger());
+//                        temp.addFruit(fruits);
+//                    } else {
+//                        System.out.println("Invalid Fruit");
+//                        System.out.println("Enter again");
+//                    }
+//                }
+//                System.out.println("Do you want to order now (Y/N) :");
+//                 choice = DataInput.InputString();
+//            }while(!choice.equals('Y'));
+//            System.out.println("Your Choice");
+//            temp.toString();
+//            System.out.println("Total : " +temp.calTotal()+"$");
+//            System.out.println("Input your name");
+//            String name = DataInput.InputString();
+//            shopping.addShopping(name,temp);
+//        }
+//    }
 
     public void viewOrder()
     {
@@ -93,9 +95,9 @@ public class ShopManagement {
 
         while (true) {
             System.out.println("Enter the item number of the fruit you want to buy:");
-            int itemNumber = DataInput.InputInteger(); // User selects by number
+            int itemNumber = DataInput.InputInteger();
 
-            // Validate item number
+
             if (itemNumber < 1 || itemNumber > fruitList.getOrder().size()) {
                 System.out.println("Invalid item number. Please try again.");
                 continue;
@@ -175,12 +177,15 @@ public class ShopManagement {
         for (Fruit fruit : tempOrder.getOrder()) {
             int amount = fruit.getQuantity() * fruit.getPrice();
             total += amount;
+
             System.out.printf("| %-8s | %-8d | %-5d$ | %-6d$ |\n",
                     fruit.getName(), fruit.getQuantity(), fruit.getPrice(), amount);
         }
 
         System.out.println("Total: " + total + "$");
     }
+
+//    public void
 
 
 

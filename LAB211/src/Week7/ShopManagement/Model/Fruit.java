@@ -16,6 +16,10 @@ public class Fruit {
         this.origin = origin;
     }
 
+    public String getOrigin() {
+        return origin;
+    }
+
     public int getQuantity() {
         return quantity;
     }
@@ -42,5 +46,9 @@ public class Fruit {
                 ", quantity=" + quantity +
                 ", origin='" + origin + '\'' +
                 '}';
+    }
+
+    public String getId() {
+        return id;
     }
 }

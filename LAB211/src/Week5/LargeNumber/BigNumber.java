@@ -35,36 +35,36 @@ public class BigNumber
 //     {
          return new BigNumber(mulBigNumber(this.value,other.value));
      }
-     public String mulBigNumber(String s01,String s02)
-     {
-         int carry=0;
-         String[] result = new String[Math.max(s01.length(),s02.length())*2+1];
-//         String[] result = ;
-//         for(int i=s01.length()-1;i>=0;i--)
-//         {
-//             int num1=s01.charAt(i)-'0';
-//             int num2= s02.charAt(i)-'0';
-//             int sum = num1*num2+carry;
-//             result.addFirst(sum%10);
-//         }
-//
-         // if(s1.length()<s2.length()) SwapString(s1,s2);
-//         for(int i=s01.length()-1;i>=0;i--)
-//         {
-//             int num1=s01.charAt(i)-'0';
-//             for (int j=s02.length()-1;j>=0;j--)
-//             {
-//                 int num2 = s02.charAt(j) - '0';
-//                 int sum = num1 * num2 + carry + result.charAt(i);
-//                 result.append(sum % 10);
-//                 carry = sum / 10;
-//             }
-//         }
-//         if(carry>0) result.append(carry);
-//
-         return result.toString();
+    private String mulBigNumber(String num1, String num2) {
+        int len1 = num1.length();
+        int len2 = num2.length();
+        int[] result = new int[len1 + len2];
 
-     }
+        for (int i = len1 - 1; i >= 0; i--) {
+            for (int j = len2 - 1; j >= 0; j--) {
+                int mul = (num1.charAt(i) - '0') * (num2.charAt(j) - '0');
+                int sum = mul + result[i + j + 1];
+
+                result[i + j + 1] = sum % 10;
+                result[i + j] += sum / 10;
+            }
+        }
+
+        StringBuilder sb = new StringBuilder();
+        for (int num : result) {
+            if (!(sb.length() == 0 && num == 0)) { // Avoid leading zeros
+                sb.append(num);
+            }
+        }
+
+        return sb.length() == 0 ? "0" : sb.toString();
+    }
+
+    @Override
+    public String toString() {
+        return value;
+    }
+
 
 
 

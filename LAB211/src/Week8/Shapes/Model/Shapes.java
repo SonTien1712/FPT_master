@@ -1,7 +1,8 @@
 package Week8.Shapes.Model;
 
-abstract class Shapes {
-
-
-
+abstract class Shape {
+    @Override
+    public String toString() {
+        return getClass().getSimpleName();
+    }
 }
