@@ -20,11 +20,6 @@ public class Shopping {
         return OrderList;
     }
 
-    @Override
-    public String toString() {
-        return "Shopping{" +
-                "OrderList=" + OrderList +
-                '}';
-    }
+
 }
 

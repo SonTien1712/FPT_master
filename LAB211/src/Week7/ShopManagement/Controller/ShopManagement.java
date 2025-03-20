@@ -5,6 +5,7 @@ import Week7.ShopManagement.Model.FruitList;
 import Week7.ShopManagement.Model.Shopping;
 
 import java.util.List;
+import java.util.Map;
 
 public class ShopManagement {
     private FruitList fruitList = new FruitList();
@@ -80,10 +81,10 @@ public class ShopManagement {
 //        }
 //    }
 
-    public void viewOrder()
-    {
-        System.out.println("Customer : " + shopping.getOrderList().keySet());
-    }
+//    public void viewOrder()
+//    {
+//        System.out.println("Customer : " + shopping.getOrderList().keySet());
+//    }
 
 
     public void addCustomerOrder() {
@@ -165,7 +166,7 @@ public class ShopManagement {
         int itemNumber = 1;
 
         for (Fruit fruit : fruits) {
-            System.out.printf("%d. %-10s %-10s %d$ %d\n",
+            System.out.printf("| %-6d | %-12s | %-10s | %-6d$ | %-10d |\n",
                     itemNumber++, fruit.getName(), fruit.getOrigin(), fruit.getPrice(), fruit.getQuantity());
         }
     }
@@ -183,6 +184,23 @@ public class ShopManagement {
         }
 
         System.out.println("Total: " + total + "$");
+    }
+
+    public void viewOrder() {
+        if (shopping.getOrderList().isEmpty()) {
+            System.out.println("No orders found.");
+            return;
+        }
+
+        System.out.println("===== Customer Orders =====");
+        for (Map.Entry<String, FruitList> entry : shopping.getOrderList().entrySet()) {
+            String customer = entry.getKey();
+            FruitList order = entry.getValue();
+
+            System.out.println("Customer: " + customer);
+            System.out.println("Order details: " + order);
+            System.out.println("------------------------");
+        }
     }
 
 //    public void

@@ -20,6 +20,16 @@ public class Contact
         this.lastname = lastname;
     }
 
+    public Contact(int id, String fullname, String group, String address, String phone) {
+        this.id = id;
+        this.fullname = fullname;
+        this.group = group;
+        this.address = address;
+        this.phone = phone;
+        this.fistname = getFistname();
+        this.lastname = getLastname();
+    }
+
     public int getId() {
         return id;
     }
@@ -35,6 +45,8 @@ public class Contact
     public void setFullname(String fullname) {
         this.fullname = fullname;
     }
+
+    private String[] parts = fullname.trim().split("\\s+");
 
     public String getGroup() {
         return group;
@@ -61,20 +73,20 @@ public class Contact
     }
 
     public String getFistname() {
-        return fistname;
+        return parts[0];
     }
 
-    public void setFistname(String fistname) {
-        this.fistname = fistname;
-    }
+//    public void setFistname(String fistname) {
+//        this.fistname = fistname;
+//    }
 
     public String getLastname() {
-        return lastname;
+        return (parts.length > 1) ? parts[parts.length - 1] : "";
     }
 
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
-    }
+//    public void setLastname(String lastname) {
+//        this.lastname = lastname;
+//    }
 
     @Override
     public String toString() {
@@ -88,4 +100,6 @@ public class Contact
                 ", lastname='" + lastname + '\'' +
                 '}';
     }
+
+
 }

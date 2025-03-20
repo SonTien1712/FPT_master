@@ -26,13 +26,13 @@ public class FruitList {
         order.add(f);
     }
 
-    public int calTotal()
-    {
-        int total=0;
-        for(Fruit fruit : order)
-        {
-            total+=fruit.getPrice()*fruit.getQuantity();
-        }
-        return total;
-    }
+//    public int calTotal()
+//    {
+//        int total=0;
+//        for(Fruit fruit : order)
+//        {
+//            total+=fruit.getPrice()*fruit.getQuantity();
+//        }
+//        return total;
+//    }
 }
